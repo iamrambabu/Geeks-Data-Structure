@@ -12,6 +12,23 @@ void reverse(int *arr,int n,int d){
         j++;
     }
 }
+void reversearray(int *arr,int n,int start,int end){
+    while(start<end){
+        int temp=arr[start];
+        arr[start]=arr[end];
+        arr[end]=temp;
+        start++;
+        end--;
+    }
+}
+void reversethearrayusingreverearrayfunction(int *arr,int n,int d){
+    if(d==0){
+        return;
+    }
+    reversearray(arr,0,d-1);
+    reversearray(arr,d,n-1);
+    reversearray(arr,0,n-1);
+}
 int gcd(int n,int d){
     if(d==0){
         return n;
